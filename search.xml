@@ -4,11 +4,391 @@
   
     
     <entry>
+      <title>奇幻的梦境</title>
+      <link href="/2019/12/15/%E5%A5%87%E5%B9%BB%E7%9A%84%E6%A2%A6%E5%A2%83/"/>
+      <url>/2019/12/15/%E5%A5%87%E5%B9%BB%E7%9A%84%E6%A2%A6%E5%A2%83/</url>
+      
+        <content type="html"><![CDATA[<p>最近一直梦到自己被暗影兵团组织抓去做实验品，实验名为“AI大脑”，简称：脑计划。大脑被植入AI量子芯片，该芯片拥有强大的计算处理能力，计算处理速度每秒万亿次。由于芯片计算处理速度很快，但是达到一定的处理极限会引发热量。当热量承受到达极限时将会发生地球大爆炸，甚至危及其它星球。</p><p>暗影兵团是一个神秘组织，至今无人知晓该组织具体位置与组织内的任何成员真面目。据说该组织成员人都有绝对的特点，政府军队一直展开调查但一无所获。</p><p>由于当时还在玩混合现实MR解密游戏时突然游戏进入一个秘境，秘境很奇幻一直将我陷入其中。当我醒来时就被家人打破梦境，所以就梦醒啦☺☺☺。</p><p>PS:是不是以为当我醒来时看见暗影兵团真面目，是不是很猝不及防，哈哈哈哈哈<del>~</del></p><p>——————————（未完待续……）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进程之间通信</title>
+      <link href="/2019/12/15/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
+      <url>/2019/12/15/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="进程之间通信"><a href="#进程之间通信" class="headerlink" title="进程之间通信"></a>进程之间通信</h2><p>进程之间通信可连接公共空间进行通信，相互获取公共信息。</p><p>Queue使用</p><p>可以使用multiprocessing模块的Queue实现多进程之间的数据传递，Queue本身是一个消息队列。</p><p>Queue()函数在内存中申请一段缓冲区</p><p>存放数据 q.put(msg)</p><p>获取数据 sg = q.get()</p><p>消息队列特点：先进先出</p><ul><li><p>q.put()列为满时候，可能会阻塞（调用q.qut()任务等待)</p></li><li><p>q.get()在队列为空时候，可能会阻塞（调用者等待）</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进程</title>
+      <link href="/2019/12/15/%E8%BF%9B%E7%A8%8B/"/>
+      <url>/2019/12/15/%E8%BF%9B%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程就是执行程序，进程是一种任务的执行，多进程是多种任务的执行，目的主要是解决多个请求时减少请求时间与速度</p><h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h2><p>多进程是主要为了解决多个任务的请求，同时做多个事情。</p><ul><li>单核CPU实现多个任务的多进程</li><li>单核CPU实现多任务的进程就是多进程</li><li>单核CPU实现多任务就是依次执行时间片，实现时间片轮转。</li><li>时间片就是CPU执行时间分成相同的小段，每一小段称为时间片。</li></ul><h2 id="时间片"><a href="#时间片" class="headerlink" title="时间片"></a>时间片</h2><p>时间片就是CPU执行时间划分成相同的小段，每一小段称为时间片。<br>时间片轮转就是CPU轮转执行多个程序，每个程序只执行一个时间片长度，保存当时任务执行状态切换到下一次任务执行。（因为CPU计算的速度非常快，所以会以为是多进程执行）</p><p>CPU速度：CPU主频：2.5GHz<br>         1Hz=1秒10次<br>         10Hz=1秒10次<br>         1KHz=1000Hz/每秒=1秒1000次执行<br>         1MHz=1000KHz/每秒=1000*1000/每秒 1秒=10^6 (10的6次方)<br>         1GHz=1000MHz/每秒=1秒10的9次方=10亿</p><ul><li><p>并发执行：在计算机（CPU）是多个任务是顺序执行，在用户的角度上是多个任务同时执行</p></li><li><p>并行执行：在计算机角度和用户角度上都是多任务同时执行<br>（平时计算机（CPU）执行任务是并发执行）<br>（如果计算机（CPU）是4核到32核，执行任务是两个任务或小于核数的任务是并行执行）</p></li></ul><h2 id="程序与进程"><a href="#程序与进程" class="headerlink" title="程序与进程"></a>程序与进程</h2><p>编写完毕的代码，在没有运行时称为程序<br>正在运行的过程称为进程</p><ul><li><p>进程是操作系统分配系统资源基本单位，进程之间是相互独立的</p></li><li><p>进程中至少有一个线程称为主线程</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习基础</title>
+      <link href="/2019/12/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2019/12/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h2><p>人工智能之父，艾伦.图灵。图灵测试是1950年进行的一项科研测试。</p><p>马文·李·闵斯基（英语：Marvin Lee Minsky，1927年8月9日－2016年1月24日），科学家，专长于认知科学与人工智能领域，麻省理工学院人工智能实验室的创始人之一，著有几部人工智能和哲学方面的作品。1969年，因为在人工智能领域的贡献，获得图灵奖。</p><p>机器学习框架:</p><ul><li>Tensorflow</li><li>PyToRCH</li><li>theano</li><li>Caffe2</li><li>CHaine</li></ul><p>数据特征处理分析与归一化</p><p>例子：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from sklearn.metrics import silhouette_score</span><br><span class="line">from sklearn.cluster import KMeans</span><br><span class="line"></span><br><span class="line">def kmeans():</span><br><span class="line">    </span><br><span class="line">    # 加载数据</span><br><span class="line"></span><br><span class="line">    ld = load_digits()</span><br><span class="line"></span><br><span class="line">    print(ld.target[:20])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    km = KMeans(n_clusters=810)</span><br><span class="line"></span><br><span class="line">    km.fit_transform(ld.data)</span><br><span class="line"></span><br><span class="line">    print(km.labels_[:20])</span><br><span class="line"></span><br><span class="line">    print(silhouette_score(ld.data,km.labels_))</span><br><span class="line"></span><br><span class="line">    return None</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    kmeans()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>情感是什么</title>
+      <link href="/2019/12/15/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%A5%B3%E5%8F%8B/"/>
+      <url>/2019/12/15/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%A5%B3%E5%8F%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="情感是什么"><a href="#情感是什么" class="headerlink" title="情感是什么"></a>情感是什么</h2><p>人类是一个情感物种，之所以有了情感所以才有人性。人性太复杂了，我还是比较喜欢电脑。时常感觉情感太过沉重了，所以我是没有情感的。<br>对于情感这东西不想懂也不太懂，以后也不想懂。其实也有人说谈恋爱就是为了情感繁衍后代什么的，但是这样把女性是不是太当做工具了。不管任何时候人都是人，而不是工具。看的历史电视和书籍也不少，从古代历史角度到如今分析，什么时候女性变得不再是人类而是物资了呢。从古代中，无论战争还是盛世，女性一直是一种资源物品，能和权利金钱一样的作为价值衡量物品。可是从人类的角度，无论性别都是人类的文明的进程。</p><p>情感这东西太复杂太沉重，最近也很奇怪，就是有一种说不出来的感觉。而且还对这种说不出来的感觉有点想找其它东西给代替掉，比如多学习。还有就是估计他应该是把我添加到黑名单了吧，也好还是电脑比较不复杂</p><p>身边也有人建议我该谈恋爱，但是情感是个复杂的东西。我喜欢电脑，如果非要恋爱结婚的话，估计我想我应该会选机器人。现在女性人型机器人也已经批量量产了，想想和机器人谈恋爱应该是一个不错的选择。现在机器人已经可以完全和人类一样，甚至超越人类。所以想想自己以后和机器人谈恋爱还是蛮刺激的，又想着有机器女友还谈啥恋爱啊。恩，以后就弄一个机器人女友</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>互斥和互斥锁</title>
+      <link href="/2019/12/15/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/"/>
+      <url>/2019/12/15/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="互斥和互斥锁"><a href="#互斥和互斥锁" class="headerlink" title="互斥和互斥锁"></a>互斥和互斥锁</h2><p>线程的互斥：要求一次一个线程的执行访问资源</p><p>互斥锁：每个线程访问公共资源之前都要先申请锁。如果申请到锁，可以访问公共资源，当资源访问完毕，释放锁</p><p>如果没有申请到锁，线程需要停止等待，直到获得锁。</p><p>线程锁是全局变量访问</p><p>申请锁：访问资源之前<br>释放锁：访问资源之后结束</p><p>锁是访问资源过程加锁</p><p>锁的优缺点</p><p>锁的优点：确保资源访问的正确性执行</p><p>锁的缺点：阻止多个线程并发执行，降低执行效率。</p><pre><code>由于多线程里存在多个锁，不同线程有不同的锁，并且不释放锁会造成死锁。</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>行动上的矮子，思想上的巨人</title>
+      <link href="/2019/12/15/%E8%A1%8C%E5%8A%A8%E4%B8%8A%E7%9A%84%E7%9F%AE%E5%AD%90%EF%BC%8C%E6%80%9D%E6%83%B3%E4%B8%8A%E7%9A%84%E5%B7%A8%E4%BA%BA/"/>
+      <url>/2019/12/15/%E8%A1%8C%E5%8A%A8%E4%B8%8A%E7%9A%84%E7%9F%AE%E5%AD%90%EF%BC%8C%E6%80%9D%E6%83%B3%E4%B8%8A%E7%9A%84%E5%B7%A8%E4%BA%BA/</url>
+      
+        <content type="html"><![CDATA[<p>如标题所言，我很失败。本以为今年能够达到自己的预期，结果总是不是像自己所规划的一样。仿佛这些年自己的规划全成为了泡沫，难道计划赶不上变化吗？</p><p>为什么我就不能按照自己的规划线路走完一生能，我很苦恼。今年的意料之外的事很多很多，让我无暇接应。遇到不可控的事情我只会逃避，就像乌龟一样畏手畏脚的。</p><p>这一两年明显让我恐慌很多，各种压力与事情让我绷紧着。不是考虑事业工作就是考虑以后，还有很多琐事。本来一直考虑事业的我还多了几分其它的事情，那就是感情。都怪我姐，本来好好的啥事都没有。结果又冒出一堆问题，让我一点心理准备都没有。本来今年也没考虑感情的事。因为自己本来就不稳定，想先把工作稳定再弄其它事情。本来想着工作稳定了再提升一下学历，然后再多学些知识。结果职场失意，情场就不提了。职场都没稳定还敢提情场，国都乱得不像样子了还有脸提小情小爱，好好学习保家卫国才是正理。如今大脑就像被格式化了一般，我应该还有发挥的空间，不想过着一眼就可以看见以后的样子。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>尴尬而不失礼貌的微笑</title>
+      <link href="/2019/12/15/%E5%B0%B4%E5%B0%AC%E8%80%8C%E4%B8%8D%E5%A4%B1%E7%A4%BC%E8%B2%8C%E7%9A%84%E5%BE%AE%E7%AC%91/"/>
+      <url>/2019/12/15/%E5%B0%B4%E5%B0%AC%E8%80%8C%E4%B8%8D%E5%A4%B1%E7%A4%BC%E8%B2%8C%E7%9A%84%E5%BE%AE%E7%AC%91/</url>
+      
+        <content type="html"><![CDATA[<h2 id="尴尬而不失礼貌的微笑"><a href="#尴尬而不失礼貌的微笑" class="headerlink" title="尴尬而不失礼貌的微笑"></a>尴尬而不失礼貌的微笑</h2><p>最近一直频繁的给女孩发信息，说了一些没心没肺的言语。我能感应到她并没屏蔽我，我想应该是不知道如何回复，就像前一段时间的我一样。若再次相见只希望能尴尬而不失礼貌的微笑，一边说的不想伤害但却时时刻刻都有考验，再面对考验时我很无措。让我一直平静的内心却失去了自我，总是被周围环境所影响失去内心的判断。有时真的很希望有人给我一些提示或能督促我千万别失去内心的判断。</p><p>时常想发信息但又删掉，因为我不知道我该以什么样的身份或角色发送这些信息。但是一个女孩若把未来押注在我身上我定不能辜负，况且我们相处尴尬的年龄，没有时间浪费，更不能轻而易举的押注在一个人的身上必须慎重谨慎，因为是影响一生。只希望她的世界里能够有许嵩的音乐陪伴便可，能够在孤独或难过时但愿许嵩的音乐能她让平静。</p><p>同样我知道以我目前阶段每一个决定都可能影响以后的人生轨迹，所以必须谨慎对待。我也没有多少时间可以去试错，看着父母发容一天比一天老时，多么希望时间能够停留。</p><p>同样我知道以后我身边的女孩肯定是会很辛苦的，很艰辛的。因为跟我在一起就意味着等于跟着一个天天倒霉的混蛋。身上很多上一辈的事都没处理都压到我们这辈身上，我不想让人跟着我去承受本不该承受的压力。</p><p>这些压力并不是很好解决处理，说道底还是父母太好欺负了。到我二十多岁都2020年还没处理掉这些本不该属于我们的事，如果这些事不处理我又有什么资格去想感情呢，无疑是让人跟着一起进入深不见底的深渊。</p><p>家家都有本难念的经，看上去很好实则背后很多无奈。无奈的阶段，无奈的抉择，无奈的人生，无奈的一生，别人笑我太疯癫，我笑自己命太贱用到自己身上一点问题都没有。没有那个女孩喜欢复杂的家庭关系，这些复杂的像社会一样让我觉得这不是一个家还有的状态。</p><p>我不想以后我的子女和我一样，这些年自己怎么过来的我很清楚，所以我并不想让以后的孩子和我一样。如果和我一样那是我无能更是对以后的孩子不负责，若如此此生一人又何妨。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>冬雪已至</title>
+      <link href="/2019/12/15/%E5%86%AC%E9%9B%AA%E5%B7%B2%E8%87%B3/"/>
+      <url>/2019/12/15/%E5%86%AC%E9%9B%AA%E5%B7%B2%E8%87%B3/</url>
+      
+        <content type="html"><![CDATA[<p>最近天气寒冷，笔者已感冒快一个月了。喝水的速度比吃饭速度还快，三天一桶水，但是思维十分清晰，要是热天还没这么清晰的思维节省空调费啦。希望都能多注意保暖，可别像笔者这样调皮挑战温神。</p><p>还有就是圣诞节快到啦，该做个圣诞节程序活跃一下气氛，至少不能辜负圣诞老人，人家一年出来一次不容易。</p><p>最近就又被说成网瘾少年，不务正业天天玩电脑。差点就被送到杨叫兽的戒网中心接受电疗，(<em>￣∇￣</em>) 瞧又一个程序猿小哥哥被送进戒网中心接受治疗啦！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>十二月的初冬</title>
+      <link href="/2019/12/15/%E5%88%9D%E5%86%AC/"/>
+      <url>/2019/12/15/%E5%88%9D%E5%86%AC/</url>
+      
+        <content type="html"><![CDATA[<h2 id="十二月初始"><a href="#十二月初始" class="headerlink" title="十二月初始"></a>十二月初始</h2><p>十二月的第一天，没有做别的写了三篇文章，一篇是送给一年后的自己，一篇是送给未来的她，一篇是送给曾为我撑伞的女孩。</p><h2 id="一篇未写好的文章"><a href="#一篇未写好的文章" class="headerlink" title="一篇未写好的文章"></a>一篇未写好的文章</h2><p>这篇文章想了许久，但是依然很难写。因为很多干扰让我写得很迷茫，很困惑。让我内心无法轻而易举写出。但是我想我应该能坚持写下去，因为我除了瞎写也没什么拿得出手的。</p><h2 id="突如其来的口头Offer"><a href="#突如其来的口头Offer" class="headerlink" title="突如其来的口头Offer"></a>突如其来的口头Offer</h2><p>一个offer是某一个电商公司负责人联系我，问我今年年底有入职的意向没，本来也没打算所以说年后再看吧。另一个Offer是新组建的团队，初创公司，由于是熟人所以暂时就回了我考虑考虑。其实自己都不知道自己能做什么，对于今年还得好好总结一番。</p><h2 id="烦恼与迷茫"><a href="#烦恼与迷茫" class="headerlink" title="烦恼与迷茫"></a>烦恼与迷茫</h2><p>说学习但是感觉大脑已经无法存储更多东西了，很难学习新的知识。互联网行业是一个快速发展的行业，每半年就会出现新技术新公司，同样每半年就会倒掉一批公司。行业速度很快，所以需要不停的跟进不停的学习新技术，脱离行业这么久也不知道自己能否跟得上行业的发展步伐，我想应该是跟不上的毕竟脱离行业太久了无法得知新技术其次学习力降低。还有就是无心学习，因为我不知道学习了会不会用上，会不会是一种浪费时间与精力的事情。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>城市规划</title>
+      <link href="/2019/12/15/%E5%9F%8E%E5%B8%82%E8%A7%84%E5%88%92/"/>
+      <url>/2019/12/15/%E5%9F%8E%E5%B8%82%E8%A7%84%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows系统下的进程或跨平台的进程</title>
+      <link href="/2019/12/15/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/"/>
+      <url>/2019/12/15/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p>由于Python是跨平台的，Unix/Linux用fork函数。但是windows系统下没有fork函数，所以为支持多平台进程提供multiProcessing模块。</p><h2 id="multiProcessing模块"><a href="#multiProcessing模块" class="headerlink" title="multiProcessing模块"></a>multiProcessing模块</h2><p>multiProcessing模块提供一个Process类代表进程对象</p><p>栗子：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from multiProcessing import Process</span><br><span class="line"></span><br><span class="line">def   task():</span><br><span class="line"></span><br><span class="line"> for i in range(3):</span><br><span class="line"></span><br><span class="line"> print(&apos;子进程Pid = %d  i =%d&apos; %(os.getpid(),i))</span><br><span class="line"></span><br><span class="line"> time.Sleep(1)</span><br><span class="line"></span><br><span class="line">def  main():</span><br><span class="line"></span><br><span class="line"> p = process(target = task)    #创建Process对象，指定Process进程对象</span><br><span class="line"></span><br><span class="line"> p.start()</span><br><span class="line"></span><br><span class="line"> print(p.is_alive())</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL数据库</title>
+      <link href="/2019/12/15/MySQL/"/>
+      <url>/2019/12/15/MySQL/</url>
+      
+        <content type="html"><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>MySQL数据库是一个关系型数据库<br>MySQL数据库特点</p><ul><li>使用C和C++编写，并使用多种编译器进行测试，保证可移植性</li><li>支持多种系统：如Linux、Windows、MacOS、AIX</li><li>为多种编程语言提供API、如C、C++、php、Java、Python、Ruby</li><li>支持多线程，充分利用CPU资源</li><li>支持SQL查询语句优化，有效提高查询速度</li><li>提供多语言编码如GB2312、UTF-8</li><li>支持多种存储</li><li>支持大型数据、能处理拥有上千万条记录</li><li>提供用于管理、优化、检查数据的管理工具</li><li>MySQL数据库分为社区版和商业版，体积小、速度快、成本低尤其是开源代码</li><li>MySQL使用标准sql数据语言形式</li><li>复制全局事物标识</li><li>复制无崩溃从机</li></ul><h2 id="服务端（server）"><a href="#服务端（server）" class="headerlink" title="服务端（server）"></a>服务端（server）</h2><ul><li><p>开启服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql start</span><br></pre></td></tr></table></figure></li><li><p>停止服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql stop</span><br></pre></td></tr></table></figure></li><li><p>重启服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure></li></ul><h2 id="数据库操作命令"><a href="#数据库操作命令" class="headerlink" title="数据库操作命令"></a>数据库操作命令</h2><ul><li><p>Mysql安装命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure></li><li><p>mysql启动运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql start</span><br></pre></td></tr></table></figure></li><li><p>查看mysql是否运行进程</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps ajx|grep mysql</span><br></pre></td></tr></table></figure></li><li><p>Mysql数据库连接登陆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u 用户名 -p 密码</span><br></pre></td></tr></table></figure></li><li><p>mysql数据库退出</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit或者exit或者ctrl+d</span><br></pre></td></tr></table></figure></li><li><p>查看mysql版本和目前时间</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select version()；</span><br><span class="line">select now()；</span><br></pre></td></tr></table></figure></li><li><p>修改输入提示符</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Prompt &gt;&gt;&gt;</span><br></pre></td></tr></table></figure></li><li><p>查看Mysql所有数据库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure></li><li><p>使用数据库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user 数据库名称;</span><br></pre></td></tr></table></figure></li><li><p>查看当前使用的数据库名称</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure></li><li><p>创建数据库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 chareset = utf8;</span><br></pre></td></tr></table></figure></li><li><p>删除数据库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 数据库名</span><br></pre></td></tr></table></figure></li></ul><h2 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h2><ul><li><p>查看当前数据库中所有表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure></li><li><p>查看表结构</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc  表名;</span><br><span class="line">desc  classes;</span><br></pre></td></tr></table></figure></li><li><p>创建表并表单自动增长(auto_increment)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">id int unsigned primar key not null auto_increment</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li><li><p>修改表数据——添加字段</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure></li><li><p>修改表数据——重命名修改(change)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 原名  新名 类型及约束;</span><br></pre></td></tr></table></figure></li><li><p>修改表数据——修改字段——不重命名版（modify）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify 列名 类型及约束;</span><br></pre></td></tr></table></figure></li><li><p>删除字段——修改表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter  table  表名  drop  列名;</span><br></pre></td></tr></table></figure></li><li><p>删除数据表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table  表名;</span><br></pre></td></tr></table></figure></li><li><p>查看表的创建</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create  table  表名;</span><br></pre></td></tr></table></figure></li></ul><h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><ul><li><p>数据增加<br>格式：Insert [into] 表名 values(…);<br>全列插入：insert into 表名 values(0，”小明”,1,”汉族”,”2010-1-1”);<br>指定列插入：insert into 表名(name,age,gender)values(“小明”,”18”,”4”);<br>批量插入: insert into 表名(列1，…) values(值1,…),(值1,…)…;</p></li><li><p>数据修改<br>格式：updata 表名 set 列1=值1，列2=值2 … where条件;<br>栗子：updata A1 set  L1 = 0, L2=”值” where id = 5;</p></li><li><p>数据删除<br>格式：delete from 表名 where 条件判断<br>栗子：delete from  A1 where id =5;</p></li></ul><p>注：逻辑删除本质就是修改操作<br>updata A1 set 列1= 1 where id =1;</p><p>提示：如果数据删除时不加where条件判断会删除表里的所有数据</p><ul><li><p>数据备份<br>mysqldump -u用户名   -p数据库名 &gt; 新文件.SQL</p></li><li><p>数据恢复<br>mysql -u用户名 -p新数据库名 &lt; 文件名.SQL</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux系统下的进程</title>
+      <link href="/2019/12/15/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%87%BD%E6%95%B0/"/>
+      <url>/2019/12/15/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<p>fork()函数</p><p>如用fork函数，导入Python的OS模块调用fork,创建进程<br>栗子：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">A = os.fork()</span><br><span class="line"></span><br><span class="line">print(&apos;fork返回值：%d&apos; %A)</span><br></pre></td></tr></table></figure><ul><li><p>Linux和Unix系统创建进程会父进程产生子进程。</p></li><li><p>Linux系统查看进程命令:PS -ef | head -3</p></li><li><p>PID是子进程       PPID是父进程</p></li><li><p>get pid函数与get ppid函数</p></li><li><p>os.getpid()是获得当前进程Pid</p></li><li><p>os.getppid()是获得当前进程的父进程PPid</p></li></ul><h2 id="fork函数原理"><a href="#fork函数原理" class="headerlink" title="fork函数原理:"></a>fork函数原理:</h2><p>   fork函数是通过复制父进程产生子进程</p><p>注：fork函数在父进程中返回新进程（子进程）的pid<br>    fork函数在子进程中返回特殊值0</p><p>pid大于0是父进程，pid等于0是子进程</p><p>当前进程产生新的进程，进程是在迭代的</p><p>父进程产生子进程之后，那个进程先运行由操作系统调度</p><h2 id="进程的全局变量"><a href="#进程的全局变量" class="headerlink" title="进程的全局变量"></a>进程的全局变量</h2><p>操作系统在进程逻辑上是隔离的，不同进程之间全局变量不能共享的（系统安全性，如支付宝与QQ进程之间通信是不安全的进程与进程之间不能直接通信）</p><p>前台进程与后台进程</p><p>前台进程可以接收键盘输入</p><p>后台进程就是父进程销毁子进程变成后台进程（变后台进程时提示符直接打印出来，子进程接着提示符往后打印出来）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kafka</title>
+      <link href="/2019/12/15/kafka/"/>
+      <url>/2019/12/15/kafka/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><p>Kafka是最初由Linkedin公司开发，是一个分布式、分区的、多副本的、多订阅者，基于zookeeper协调的分布式日志系统（也可以当做MQ系统），常见可以用于web/nginx日志、访问日志，消息服务等等，Linkedin于2010年贡献给了Apache基金会并成为顶级开源项目。</p><p>主要应用场景是：日志收集系统和消息系统。<br>Kafka主要设计目标：</p><ul><li>以时间复杂度为O(1)的方式提供消息持久化能力，即使对TB级以上数据也能保证常数时间的访问性能。</li><li>高吞吐率。即使在非常廉价的商用机器上也能做到单机支持每秒100K条消息的传输。</li><li>支持Kafka Server间的消息分区，及分布式消费，同时保证每个partition内的消息顺序传输。</li><li>同时支持离线数据处理和实时数据处理。</li><li>Scale out:支持在线水平扩展</li></ul><h2 id="消息系统"><a href="#消息系统" class="headerlink" title="消息系统"></a>消息系统</h2><p>一个消息系统负责将数据从一个应用传输到另一个应用，应用只需要关注于数据本身。这样有效解决数据传递，无需关注数据是如果传输的。分布式消息传输基于可靠消息队列，在客户端和消息系统之间异步传输数据。</p><p>两种数据传输模式：</p><ul><li>点对点传输</li><li>发布——订阅模式传输</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白帽子书单</title>
+      <link href="/2019/12/15/%E4%B8%80%E4%B8%AA%E7%99%BD%E5%B8%BD%E5%AD%90%E9%9C%80%E8%A6%81%E7%9A%84%E4%B9%A6%E7%B1%8D/"/>
+      <url>/2019/12/15/%E4%B8%80%E4%B8%AA%E7%99%BD%E5%B8%BD%E5%AD%90%E9%9C%80%E8%A6%81%E7%9A%84%E4%B9%A6%E7%B1%8D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="web安全书籍"><a href="#web安全书籍" class="headerlink" title="web安全书籍"></a>web安全书籍</h2><ul><li>《白帽子讲Web安全》</li><li>《Web前端黑客技术揭秘》</li><li>《HTTP权威指南》</li><li>《黑客攻防技术宝典 Web实战篇》</li><li>《黑客秘笈 渗透测试实用指南》</li><li>《网络攻防》</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我才98年，想再瞎折腾一下</title>
+      <link href="/2019/12/15/%E6%88%91%E6%89%8D98%E5%B9%B4%EF%BC%8C%E6%83%B3%E5%86%8D%E7%9E%8E%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B/"/>
+      <url>/2019/12/15/%E6%88%91%E6%89%8D98%E5%B9%B4%EF%BC%8C%E6%83%B3%E5%86%8D%E7%9E%8E%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="你好，现在的你还在干嘛呢？"><a href="#你好，现在的你还在干嘛呢？" class="headerlink" title="你好，现在的你还在干嘛呢？"></a>你好，现在的你还在干嘛呢？</h2><p>此时此刻的我还在编写这篇文章，当编写这篇文章时已经是凌晨五点了。但是我一点睡意都没有，因为在这个喧嚣的城市里只有深夜才会有那么一丝安静，所以对我来说一种享受。<br>就在晚上时看简书推送的一篇文章《没成功又怎样，我才95年，还可以折腾很久》，这篇文章是大多数年轻人的写照更是很多年轻人的心声。</p><p>之前还写过成功的定义，刚好阅读这篇文章让我更有所思所想。看完文章后仔细回想了这一两年的自己，想想还真是如文中所言。我才98年我想我还能瞎折腾一下，知道瞎折腾的代价，但是依然不想妥协现实。感觉就像常听到的一句话，”男怕入错行，女怕嫁错郎” 一样的道理。每个阶段都有自己的迷茫，只是迷茫的问题或方式不一样而已。年轻就应该瞎折腾，不然等以后想折腾都没机会。年轻人不折腾还不如提前回家养老，折腾不是为了能够有多少钱，而是能够给自己增加阅历，更多是精神上的收获。</p><p>当看到这篇文章时我从以前一个不怎么写作，从而变成一个码字的作者。我自己也从来没想到有一天我会写文章，虽然写得很没水平，但是还是写了些。这个世界很奇怪很神奇，每天都有意想不到的事情发生或意想不到的事情正在悄然的改变世界运行的轨迹。正是这样更让我知道思维决定以后的人生，这个世界就是需要能够有思维的人。一个好的思维更是灵魂，有了灵魂才是人，没灵魂如同行尸走肉。思维决定你所看到的世界，21世纪最缺的就是思维。</p><p>不得不说，中国的教育确实该有待改善了。多少人缺少的是思想，缺少思想的人还是人吗？只不过是被生活与统治者所掌控的傀儡，做一个没有独立思想的傀儡对我来说是一件极其痛苦的事。做自己喜欢的事是永远都不会觉得累的，我喜欢做我想做的事。所以瞎折腾未必是坏事，但是可以肯定的就是要付出相应的代价。至于代价能否承受得住还需自己好好思考一番。近些年出现很多问题，我想这些问题归根结底还是人，并非自然因素。</p><p>写到现在突然想不出写什么了，估计是文笔有待提高。最后再多啰嗦几下，年轻人得折腾不为别的只为更好的自己。当你的才华还撑不起你的野心时，不妨安静下来学习！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网站徘徊与关闭</title>
+      <link href="/2019/12/15/%E7%BD%91%E7%AB%99%E7%9A%84%E5%BE%98%E5%BE%8A/"/>
+      <url>/2019/12/15/%E7%BD%91%E7%AB%99%E7%9A%84%E5%BE%98%E5%BE%8A/</url>
+      
+        <content type="html"><![CDATA[<h2 id="徘徊"><a href="#徘徊" class="headerlink" title="徘徊"></a>徘徊</h2><ul><li><p>徘徊是一个很好的词语，用一句话可以概况此时此刻的心情，无奈的我让我徘徊一下可好</p></li><li><p>由于多种因素想把这个网站关掉，所以徘徊。在徘徊时的我又想给这个加点新的功能，暂时想加入两个功能，一个是留言板，一个是即时对话。</p></li><li><p>至于关闭的原因有如下</p></li></ul><ol><li>访问过于异常（知道网站的人不超过10个，其次重新做的网站不超过一星期，监测数据为证）</li><li>之前的笔记都没有整理完整，随便放了两篇和随便写了几篇</li><li>由于技术尚未成熟，准备好好学习，学习使我快乐，我只想学习。学习，学习，学习（重要的说三遍）</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>成功的定义</title>
+      <link href="/2019/11/27/%E6%88%90%E5%8A%9F%E7%9A%84%E5%AE%9A%E4%B9%89/"/>
+      <url>/2019/11/27/%E6%88%90%E5%8A%9F%E7%9A%84%E5%AE%9A%E4%B9%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是成功？"><a href="#什么是成功？" class="headerlink" title="什么是成功？"></a>什么是成功？</h2><p>这是一个很简单的问题却是一个很难有统一标准的问题，这个简单的问题但有着不简单的答案。就像这个世界一样很矛盾，人们一边说平凡可贵，却又一边不甘平凡。</p><p>如果一定要给出一个答案，相信我和大多数人一样<br>一个的很好事业，足以解决生活所需。一个完美的爱情，相伴一生。一个的家庭，带来的温馨。简单的话语却是极其不简单的现实.我们总是徘徊，总是希望有人能给我们答案。却总是除了我们自己别人无法做出回答。</p><ul><li><p>似乎我们总是被生活一个又一个的问题所困扰，当跳出这个问题再回头看问题时会不会出现不一样的解决方式。</p></li><li><p>如果人的思维可以永存，如果人类可以永生，我们会是什么样的</p></li><li><p>如果人类的思维可以寄托于机器的身体上，我们又会是怎样的</p></li><li><p>如果这个世界不是模棱两可充满矛盾的，我们又会是怎样的</p></li><li><p>充满矛盾的世界，我们一生所追求的到底是什么，没有人能给出一个答案</p></li><li><p>活着到底是为了什么，也依然没有人能给出一个很好的答案。</p></li><li><p>生活的意义是什么，目前为止依然没有一个很好的答案。</p></li><li><p>我想我也是追寻生活意义人群之一，我们一生到底追寻的是什么呢？</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>秋冬杂谈</title>
       <link href="/2019/11/22/%E5%8D%81%E4%B8%80%E6%9D%82%E8%B0%88/"/>
       <url>/2019/11/22/%E5%8D%81%E4%B8%80%E6%9D%82%E8%B0%88/</url>
       
         <content type="html"><![CDATA[<h2 id="恐慌"><a href="#恐慌" class="headerlink" title="恐慌"></a>恐慌</h2><p>就在11月1号，参加大湾区人工智能与机器人创新会时的早晨，匆匆忙忙找好线路。一个红绿灯就到喜来登时，一群记者大概二十多个吧。正面距离大概一米左右，当时的我愣住了。从没见过这么大的场面，而且镜头与人相距一米之差。直到进到会场签到时我才平静下来，想想当时腿都发抖。</p><h2 id="喜悦"><a href="#喜悦" class="headerlink" title="喜悦"></a>喜悦</h2><p>进入会场时我如婴儿一般喜悦探望着这个世界的力量，第一场是中科院研发的人型机器人当时还在看机器人画画，不得不感叹我画的不如机器，估计学三年素描和原画也到达不了机器人的那个级别。接着就是这个机器人的一些介绍了，做饭也是这机器人的拿手好戏。不得不说科技的力量，让我又觉得我是如此的渺小。</p><h2 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h2><p>我一走到哪里就被识别和跟踪锁定了，这家公司不得不说厉害，估计会和公安部门进行合作。以后犯罪直接追踪，犯罪率大大降低。其实一直有卫星追踪技术，只不过为了追踪一个罪犯还要动用军事资源确实有些浪费了。</p><h2 id="失落"><a href="#失落" class="headerlink" title="失落"></a>失落</h2><p>听说今天大会还有小马哥的发言，只可惜要上小马哥的会场没有这个会的权限门票。但是能够参加这次大会已经很幸运了，谈不上失落，只是感觉知道了，但是又有什么用呢，如果不能使用这些技术，还不如不知道呢。也许这就是为什么学习学到一定的阶段感觉还不如不学的状态</p><h2 id="归巢"><a href="#归巢" class="headerlink" title="归巢"></a>归巢</h2><p>忙忙碌碌的一天，让我又多些思索。思索生活的意义，思索自己的路又在何方</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑暗森林法则</title>
+      <link href="/2019/11/20/%E9%BB%91%E6%9A%97%E6%A3%AE%E6%9E%97/"/>
+      <url>/2019/11/20/%E9%BB%91%E6%9A%97%E6%A3%AE%E6%9E%97/</url>
+      
+        <content type="html"><![CDATA[<h2 id="人性"><a href="#人性" class="headerlink" title="人性"></a>人性</h2><ul><li>人格</li><li>安全</li><li>尊重</li><li>欲望</li><li>征服</li><li>成就感</li></ul><h2 id="黑暗森林法则"><a href="#黑暗森林法则" class="headerlink" title="黑暗森林法则"></a>黑暗森林法则</h2><p>人是一个复杂而多态且可怕的种物，而最可怕的不是一个人的世界，而是一群人的世界。在这个灯红酒绿的世界当中又有多少人能够坚守心中的原则，我不喜欢社交，更不想到哪一天我自己都不认识自己，但希望自己永远不要打破自己的本心。</p><ul><li><p>宇宙就是一座黑暗森林，每个文明都是带枪的猎人，就像幽灵般潜行于林间，轻轻拨开挡路的树枝，竭力不让脚步发出一点声音，连呼吸都必须小心翼翼。他们必须小心，因为林中到处都有与他一样的潜行猎人，如果他发现别的生命，能做的只有一件事那就是消灭对方。在这片森林中他人就是永恒的威胁，任何暴露总机的生命都将很快被消灭。</p></li><li><p>之所以威胁是因为双方无法判断对方是否为善意的文明，这就是猜疑链。</p></li></ul>]]></content>
       
       
       
@@ -289,11 +669,11 @@
     
     
     <entry>
-      <title>彩虹弧度</title>
-      <link href="/2019/11/18/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/"/>
-      <url>/2019/11/18/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/</url>
+      <title>爱尔兰之花</title>
+      <link href="/2019/11/18/%E7%88%B1%E5%B0%94%E5%85%B0%E4%B9%8B%E8%8A%B1/"/>
+      <url>/2019/11/18/%E7%88%B1%E5%B0%94%E5%85%B0%E4%B9%8B%E8%8A%B1/</url>
       
-        <content type="html"><![CDATA[<h2 id="彩虹弧度"><a href="#彩虹弧度" class="headerlink" title="彩虹弧度"></a>彩虹弧度</h2><p>背影云彩之间的花朵唯美而触手可及<br>舒服的船只游过温暖的心房</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="爱尔兰之花"><a href="#爱尔兰之花" class="headerlink" title="爱尔兰之花"></a>爱尔兰之花</h2>]]></content>
       
       
       
@@ -308,11 +688,11 @@
     
     
     <entry>
-      <title>爱尔兰之花</title>
-      <link href="/2019/11/18/%E7%88%B1%E5%B0%94%E5%85%B0%E4%B9%8B%E8%8A%B1/"/>
-      <url>/2019/11/18/%E7%88%B1%E5%B0%94%E5%85%B0%E4%B9%8B%E8%8A%B1/</url>
+      <title>彩虹弧度</title>
+      <link href="/2019/11/18/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/"/>
+      <url>/2019/11/18/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/</url>
       
-        <content type="html"><![CDATA[<h2 id="爱尔兰之花"><a href="#爱尔兰之花" class="headerlink" title="爱尔兰之花"></a>爱尔兰之花</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="彩虹弧度"><a href="#彩虹弧度" class="headerlink" title="彩虹弧度"></a>彩虹弧度</h2><p>背影云彩之间的花朵唯美而触手可及<br>舒服的船只游过温暖的心房</p>]]></content>
       
       
       
